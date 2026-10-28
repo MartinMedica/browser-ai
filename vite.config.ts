@@ -4,9 +4,7 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS
-    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}/`
-    : '/',
+  base: '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

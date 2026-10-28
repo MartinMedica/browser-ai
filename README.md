@@ -1,6 +1,6 @@
-# Image Caption Demo
+# Browser AI
 
-A small image-to-text demo powered by Transformers.js. Choose a sample image or upload your own, then get a caption generated locally in the browser.
+A collection of AI demos that run in the browser. The first demo turns an image into a caption with Transformers.js. Choose a sample image or upload your own to try it.
 
 The model runs in a Web Worker so inference does not block the interface. The first run downloads the model, which is then cached by the browser. Captions are model-generated and may be inaccurate.
 
@@ -15,11 +15,11 @@ pnpm dev
 
 Create a production build with `pnpm build`, or preview it with `pnpm preview`.
 
-## Deploy
+## Deploy with Vercel
 
-The GitHub Actions workflow in `.github/workflows/deploy.yml` builds and publishes the app to GitHub Pages when changes are pushed to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
+Import the `browser-ai` repository into Vercel. Vercel detects Vite automatically; use `pnpm build` as the build command and `dist` as the output directory. The included `vercel.json` sends app routes to the SPA entry point so additional demos can use client-side routes.
 
-The Vite base path is derived from the GitHub repository name during the Pages build, so the app works as a project site without a custom domain.
+Vercel will assign a `browser-ai.vercel.app` URL if that project name is available. You can attach a custom domain later.
 
 ## Model and assets
 
